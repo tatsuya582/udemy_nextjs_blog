@@ -4,13 +4,13 @@ import localFont from "next/font/local";
 import styles from "@/styles/Home.module.css";
 import Link from "next/link";
 import Layout from "../components/Layout";
-import { getPostData } from "@/lib/post";
+import { getPostsData } from "@/lib/post";
 
 import utilStyle from "../styles/utils.module.css";
 
 //SSGの場合
 export async function  getStaticProps() {
-  const allPostsData = getPostData() //id, title, thumbnail
+  const allPostsData = getPostsData() //id, title, thumbnail
   console.log(allPostsData);
 
   return {
