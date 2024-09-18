@@ -1,8 +1,8 @@
 import path from "path";
 import fs from 'fs'
-import matter from "matter";
+import matter from "gray-matter";
 
-const postsDirectory = path.join(process.cwd(), "posts")
+const postsDirectory = path.join(process.cwd(), "src", "posts");
 
 // mdファイルのデータを取り出す
 export function getPostData() {
@@ -19,7 +19,8 @@ export function getPostData() {
     //idとデータを返す
     return {
       id,
-      ...matterResult,
+      ...matterResult.data,
     }
   });
+  return allPostsData;
 }
